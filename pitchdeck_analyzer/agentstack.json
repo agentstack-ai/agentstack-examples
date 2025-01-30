@@ -1,0 +1,10 @@
+{
+    "framework": "crewai",
+    "tools": [
+        "file_read",
+        "composio"
+    ],
+    "agentstack_version": "0.3.0",
+    "template": "hello_alex",
+    "template_version": "4"
+}

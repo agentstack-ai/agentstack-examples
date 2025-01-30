@@ -1,0 +1,3 @@
+ERROR: An error occurred: 
+Could not find agentstack.json, are you in an AgentStack project directory?
+INFO: Run again with --debug for more information.

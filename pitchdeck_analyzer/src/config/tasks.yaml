@@ -1,0 +1,10 @@
+fetch_emails:
+  description: >-
+    Check the last 5 emails in the inbox:
+    1. Print email details (subject, sender, content)
+    2. If email has PDF attachment, download it to local downloads folder
+    3. Skip emails without PDF attachments
+    4. Report number of PDFs downloaded
+  expected_output: >-
+    A summary of processed emails and any downloaded PDFs.
+  agent: email_agent
