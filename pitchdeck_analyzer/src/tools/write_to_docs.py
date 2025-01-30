@@ -20,10 +20,7 @@ COLUMNS = [
     'Summary of Idea',
     'Industry/Sector',
     'Ask',
-    'Valuation',
-    'Previous Rounds',
-    'Revenue/Traction',
-    'Email'
+    'Competitors'
 ]
 
 def get_google_sheets_service():
@@ -69,10 +66,7 @@ def append_row(
     idea_summary: Optional[str] = None,
     industry: Optional[str] = None,
     ask: Optional[str] = None,
-    valuation: Optional[str] = None,
-    previous_rounds: Optional[str] = None,
-    revenue_traction: Optional[str] = None,
-    email: Optional[str] = None
+    competitors: Optional[str] = None,
 ) -> bool:
     """
     Appends a row to the specified spreadsheet with the given values.
@@ -86,10 +80,7 @@ def append_row(
         idea_summary (str, optional): Summary of the business idea
         industry (str, optional): Industry/Sector
         ask (str, optional): Ask amount
-        valuation (str, optional): Company valuation
-        previous_rounds (str, optional): Previous funding rounds
-        revenue_traction (str, optional): Revenue or traction metrics
-        email (str, optional): Contact email
+        competitors (str, optional): Competitors and their details
     
     Returns:
         bool: True if successful, False otherwise
@@ -112,10 +103,7 @@ def append_row(
             idea_summary or '',
             industry or '',
             ask or '',
-            valuation or '',
-            previous_rounds or '',
-            revenue_traction or '',
-            email or ''
+            competitors or '',
         ]
 
         # Prepare the data for appending
@@ -155,10 +143,7 @@ def main():
         idea_summary="AI-powered analytics platform",
         industry="Technology",
         ask="$2M",
-        valuation="$10M",
-        # previous_rounds is None/empty
-        revenue_traction="$100K ARR",
-        email="contact@techstartup.com"
+        competitors="Competitor 1, Competitor 2, Competitor 3"
     )
     
     if success:

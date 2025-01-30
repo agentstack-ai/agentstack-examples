@@ -1,0 +1,14 @@
+{
+    "token":...,
+    "refresh_token":...,
+    "token_uri":...,
+    "client_id":...,
+    "client_secret":...,
+    "scopes": [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/gmail.readonly",
+    ],
+    "universe_domain": "googleapis.com",
+    "account": "",
+    "expiry":...
+}

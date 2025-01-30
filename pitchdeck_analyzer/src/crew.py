@@ -122,15 +122,14 @@ class EmailFetcherCrew():
             print("PDF uploaded successfully. Extracting information...")
             
             questions = [
-                "Who are the founders of this company?",
+                "Who is the main team behind this company? Could be CTO, CEO, Co-Founder, Founder, Investor, etc. Definitely find upto 1 person. Only respond with name and title",
+                "Who is the second main team behind this company? Could be CTO, CEO, Co-Founder, Founder, Investor, etc. Definitely find upto 1 person. Only respond with name and title",
+                "Who is the third main team behind this company? Could be CTO, CEO, Co-Founder, Founder, Investor, etc. Definitely find upto 1 person. Only respond with name and title",
                 "What is the company name?",
                 "What is the main business idea or summary?",
                 "What industry or sector is this company in?",
                 "How much funding are they asking for (the ask amount)?",
-                "What is the company's current valuation?",
-                "What previous funding rounds have they had?",
-                "What is their current revenue or traction?",
-                "What is the contact email mentioned in the document?"
+                "Who are the competitors of this company and their details? What are other similar companies in the space and how are they doing? What are their names, revenue, valuation, etc?",
             ]
 
             results = {}
@@ -146,15 +145,14 @@ class EmailFetcherCrew():
 
             print("\nUpdating spreadsheet with extracted information...")
             success = append_row(
-                founder1=results.get("Who are the founders/team of this company?", ""),
+                founder1=results.get("Who is the main team behind this company? Could be CTO, CEO, Co-Founder, Founder, Investor, etc. Definitely find upto 1 person. Only respond with name and title", ""),
+                founder2=results.get("Who is the second main team behind this company? Could be CTO, CEO, Co-Founder, Founder, Investor, etc. Definitely find upto 1 person. Only respond with name and title", ""),
+                founder3=results.get("Who is the third main team behind this company? Could be CTO, CEO, Co-Founder, Founder, Investor, etc. Definitely find upto 1 person. Only respond with name and title", ""),
                 company_name=results.get("What is the company name?", ""),
                 idea_summary=results.get("What is the main business idea or summary?", ""),
                 industry=results.get("What industry or sector is this company in?", ""),
                 ask=results.get("How much funding are they asking for (the ask amount)?", ""),
-                valuation=results.get("What is the company's current valuation?", ""),
-                previous_rounds=results.get("What previous funding rounds have they had?", ""),
-                revenue_traction=results.get("What is their current revenue or traction?", ""),
-                email=results.get("What is the contact email mentioned in the document?", "")
+                competitors=results.get("Who are the competitors of this company?", ""),
             )
 
             if success:
